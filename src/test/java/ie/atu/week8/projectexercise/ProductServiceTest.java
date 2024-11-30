@@ -43,14 +43,14 @@ class ProductServiceTest {
 
     @Test
     void testValidateProductForEmptyName() {
-        Product product = new Product(1L, "", "Not So Expensive", 890);
+        Product product = new Product(1L, "", "Expensive", 890);
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> productService.saveProduct(product));
         assertEquals("Product name cannot be empty", iae.getMessage());
     }
 
     @Test
     void testValidateProductForNullName() {
-        Product product = new Product(1L, null, "Not So Expensive", 890);
+        Product product = new Product(1L, null, "Expensive", 890);
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> productService.saveProduct(product));
         assertEquals("Product name cannot be empty", iae.getMessage());
     }
